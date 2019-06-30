@@ -5,9 +5,23 @@ spring:
   profiles: develop
   main:
     banner-mode: 'off'
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/edr-develop
+    username: edr
+    password: edr
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  security:
+    user:
+      name: edr
+      password: edr
 
 ---
-
 server:
   port: 10001
 
@@ -15,3 +29,18 @@ spring:
   profiles: test
   main:
     banner-mode: 'off'
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/edr-production
+    username: edr
+    password: edr
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  security:
+    user:
+      name: edr
+      password: edr

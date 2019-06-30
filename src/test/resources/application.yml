@@ -3,3 +3,14 @@ spring:
     active: test
   main:
     banner-mode: 'off'
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/edr-develop
+    username: edr
+    password: edr
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
