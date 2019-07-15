@@ -4,6 +4,7 @@ import com.amors.edrapp.dto.Bot;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +33,10 @@ public class BotService {
     }
 
     public Bot get(String id) {
-        return botsMap.get(id);
+        if (botsMap.containsKey(id)) {
+            return botsMap.get(id);
+        } else {
+            throw new EntityNotFoundException(String.format("Bot with id %s not found", id));
+        }
     }
 }
