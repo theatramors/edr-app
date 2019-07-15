@@ -1,11 +1,11 @@
 server:
   port: 8080
-
 spring:
   profiles: develop
   main:
     banner-mode: 'off'
   datasource:
+    enabled: false
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/edr-develop
     username: edr
@@ -20,6 +20,8 @@ spring:
     user:
       name: edr
       password: edr
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 ---
 server:
@@ -30,6 +32,7 @@ spring:
   main:
     banner-mode: 'off'
   datasource:
+    enabled: false
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/edr-production
     username: edr
@@ -44,3 +47,5 @@ spring:
     user:
       name: edr
       password: edr
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
