@@ -15,7 +15,6 @@
   <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <description>EDR application</description>
-  <url/>
   
   <build>
     <plugins>
@@ -75,9 +74,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
-  <dependencyManagement/>
-  <distributionManagement/>
   
   <properties>
     <java.version>1.8</java.version>
