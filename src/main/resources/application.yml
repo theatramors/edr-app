@@ -20,8 +20,6 @@ spring:
     user:
       name: edr
       password: edr
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 ---
 server:
@@ -47,5 +45,3 @@ spring:
     user:
       name: edr
       password: edr
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
