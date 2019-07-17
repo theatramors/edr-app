@@ -5,7 +5,7 @@ spring:
   main:
     banner-mode: 'off'
   datasource:
-    enabled: false
+    enabled: true
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/edr-develop
     username: edr
@@ -30,7 +30,7 @@ spring:
   main:
     banner-mode: 'off'
   datasource:
-    enabled: false
+    enabled: true
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/edr-production
     username: edr
