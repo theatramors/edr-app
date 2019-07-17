@@ -49,3 +49,12 @@ spring:
       password: edr
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+---
+server:
+  port: 8080
+
+spring:
+  profiles: production
+  main:
+    banner-mode: 'off'
