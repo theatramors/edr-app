@@ -21,7 +21,9 @@ public class UserService {
     }
 
     public void add(UserDto dto) {
-        userDtoMap.put(dto.getUsername(), dto);
+        if (null != dto) {
+            userDtoMap.put(dto.getUsername(), dto);
+        }
     }
 
     public List<UserDto> get() {
