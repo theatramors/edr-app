@@ -25,10 +25,10 @@ spring:
 
 ---
 server:
-  port: 10001
+  port: 8100
 
 spring:
-  profiles: test
+  profiles: production
   main:
     banner-mode: 'off'
   datasource:
@@ -49,12 +49,3 @@ spring:
       password: edr
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-
----
-server:
-  port: 8080
-
-spring:
-  profiles: production
-  main:
-    banner-mode: 'off'
