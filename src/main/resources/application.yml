@@ -20,6 +20,8 @@ spring:
     user:
       name: edr
       password: edr
+  kafka:
+    bootstrap-servers: localhost:9092
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
@@ -47,5 +49,7 @@ spring:
     user:
       name: edr
       password: edr
+  kafka:
+    bootstrap-servers: localhost:9092
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
