@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.web.servlet.MultipartProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import static org.springframework.util.unit.DataSize.parse;
 
@@ -23,5 +25,10 @@ public class ApplicationConfiguration {
         properties.setMaxFileSize(parse("25MB"));
         properties.setMaxRequestSize(parse("25MB"));
         return properties;
+    }
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        return new SessionLocaleResolver();
     }
 }

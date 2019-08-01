@@ -22,6 +22,8 @@ spring:
       password: edr
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  mvc:
+    locale-resolver: accept_header
 
 ---
 server:
