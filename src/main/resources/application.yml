@@ -1,5 +1,12 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILE:develop}
+
+---
+
 spring:
   profiles: develop
   main:
@@ -7,9 +14,9 @@ spring:
   datasource:
     enabled: false
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/edr-develop
-    username: edr
-    password: edr
+    url: jdbc:postgresql://${DATABSAE_HOST:localhost}:${DATABASE_PORT:5432}/${$DATABASE_NAME:database}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:password}
   jpa:
     properties:
       hibernate:
@@ -24,8 +31,6 @@ spring:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 ---
-server:
-  port: 8100
 
 spring:
   profiles: production
@@ -34,9 +39,9 @@ spring:
   datasource:
     enabled: false
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/edr-production
-    username: edr
-    password: edr
+      url: jdbc:postgresql://${DATABSAE_HOST:localhost}:${DATABASE_PORT:5432}/${$DATABASE_NAME:database}
+      username: ${DATABASE_USERNAME:postgres}
+      password: ${DATABASE_PASSWORD:password}
   jpa:
     properties:
       hibernate:
